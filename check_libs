@@ -29,10 +29,12 @@ use Getopt::Long;
 $ENV{'PATH'} = '/bin:/sbin:/usr/bin:/usr/sbin';
 delete @ENV{'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
 
-my $LSOF = '/usr/sbin/lsof -F0 -w';
+my $LSOF;
+
+$LSOF = '/usr/sbin/lsof -F0 -w';
 
 if (-e "/etc/debian_version" ) {
-        my $LSOF = '/usr/bin/lsof -F0 -w';
+	$LSOF = '/usr/bin/lsof -F0 -w';
 }
 
 my $VERSION = '0.2012042101';
